@@ -1,0 +1,28 @@
+composer require laravel/passport
+
+php artisan vendor:publish --tag=passport-migrations
+
+Laravel\Passport\PassportServiceProvider::class, di config/app providers
+
+php artisan migrate
+
+php artisasn passport:install
+
+
+
+app/user
+use Laravel\Passport\HasApiTokens;
+-------------------------------------
+use HasApiTokens, Notifiable;
+
+
+app/providers/auth
+use Laravel\Passport\Passport;
+-------------------------------
+boot{ Passport::routes();
+
+
+config/auth
+guards{ api => driver == passport , hash tidak ada
+
+
